@@ -12,41 +12,14 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-       
-        Patient *patient = [[Patient alloc] init];
-        Doctor *doctor = [[Doctor alloc] init];
-        
-        
-        
-        
+        NSMutableDictionary *patientRecord = [[patientRecord alloc] init];
+        Patient *patient = [[Patient alloc] initWithAge:10 name:@"Nick" healthCard:NO symptom:@"pimple"];
+        Doctor *doctor1 = [[Doctor alloc] initWithName:@"Tom" specializtion:@"Cardiologist"];
+        Doctor *doctor2 = [[Doctor alloc] initWithName:@"Mike" specializtion:@"pidiatrist"];
+        [doctor1 visit:patient];
+        [doctor1 requestMedication:patient];
         
     }
     return 0;
 }
 
-
-//GameController *gameController =[[GameController alloc] init];
-//InputCollector *userInput = [[InputCollector alloc] init];
-//
-//while (YES) {
-//    NSString* input = [userInput inputForPrompt:@"select an option: quit or play"];
-//    if ([input isEqualToString: @"quit\n"]) {
-//        NSLog(@"Thanks for playing!");
-//        break;
-//    } else if ([input isEqualToString:@"play\n"]) {
-//        [gameController rollDices];
-//        [gameController printValues];
-//        
-//        while (YES) {
-//            NSString *prompt = @"\n roll - continue play\n press no. 0-4 - hold or unhold dice\n reset - reset\n exit - exit to start\n";
-//            
-//            NSString* innerInput = [userInput inputForPrompt:prompt];
-//            
-//            if ([innerInput isEqualToString:@"roll\n"]) {
-//                [gameController rollDices];
-//                [gameController printValues];
-//                [gameController score];
-//            } else if ([innerInput isEqualToString:@"reset\n"]) {
-//                [gameController reset];
-//            } else if ([innerInput isEqualToString:@"exit\n"]) {
-//                break;

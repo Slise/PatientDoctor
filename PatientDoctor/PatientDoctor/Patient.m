@@ -8,16 +8,18 @@
 
 #import "Patient.h"
 
+
+
 @implementation Patient
 
-- (instancetype)init
+- (instancetype)initWithAge:(int)anAge name:(NSString*)aName healthCard:(BOOL)aHealthCard symptom:(NSString*)aSymptom
 {
     self = [super init];
     if (self) {
-        _age =
-        _name =
-        _healthCard =
-        _symptom =
+        _age = anAge;
+        _name = aName;
+        _healthCard = aHealthCard;
+        _symptom = aSymptom;
     }
     return self;
 }

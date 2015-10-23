@@ -9,53 +9,55 @@
 #import "Doctor.h"
 #import "Patient.h"
 
-@implementation Doctor
+@interface Doctor ()
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self.newPatient != healthCard) {
-        return NO;
-    } else (self.newPatient == heathCard)
-        
-        NSMutableDictionary *Record = [[NSArray patientRecord];
-        
-        
-    return 0;
-}
-
--(void) requestMedication {
-    
-    
-    }
-                                       
-    return self;
-}
+@property (nonatomic, strong) NSMutableDictionary *prescription;
 
 @end
 
-//
-//                                       - (instancetype)init {
-//                                           self = [super init];
-//                                           if (self) {
-//                                               _diceAvailable = [NSMutableArray array];
-//                                               _heldDice = [NSMutableSet set];
-//                                               
-//                                               [self initializeDices];
-//                                           }
-//                                           return self;
-//                                       }
-//                                       
-//                                       - (void)initializeDices {
-//                                           for (int i = 0; i < 5; i++) {
-//                                               [self.diceAvailable addObject:[[Dice alloc] init]];
-//                                           }
-//                                       }
-//                                       
-//                                       - (void)rollDices {
-//                                           for (Dice *dice in self.diceAvailable) {
-//                                               if (![self.heldDice containsObject:dice]) {
-//                                                   [dice getRandomNumber];
-//                                               }
-//                                           }
-//                                       }
+
+
+@implementation Doctor
+
+
+- (instancetype)initWithName:(NSString *)aName specializtion:(NSString *)aSpecialization
+{
+    self = [super init];
+    if (self) {
+        _name = aName;
+        _specialiaztion = aSpecialization;
+        _patientList = [[NSMutableArray alloc] init];
+        _patientRecord = *patientRecord;
+        _prescription = [@{ @"headache":@"tylenol", @"stomache":@"bismol", @"pain":@"advil"} mutableCopy];
+    }
+    return self;
+    
+}
+
+- (void) visit:(Patient*)patient {
+    
+    if (!patient.healthCard)
+    {
+        NSLog(@"Patient does not have healthcard.");
+    }
+    else
+    {
+        [self.patientList addObject:patient];
+        NSLog(@"New patient %@ added to record", patient.name);
+    }
+}
+
+- (void) requestMedication:(Patient*)patient {
+    NSArray* listOfSymptoms = [self.prescription allKeys];
+        if ([listOfSymptoms containsObject:patient.symptom])  {
+            NSLog(@"Patient known symptom %@\n", self.prescription[patient.symptom]);
+        } else
+        {
+            NSLog(@"Patient has uncurable disease and will die!");
+            
+        }
+}
+
+
+@end
+

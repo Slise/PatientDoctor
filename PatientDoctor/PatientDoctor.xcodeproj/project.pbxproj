@@ -31,7 +31,6 @@
 		93E5AB271BD95B0B00485110 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
 		93E5AB291BD95B2100485110 /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
 		93E5AB2A1BD95B2100485110 /* Doctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doctor.m; sourceTree = "<group>"; };
-		93E5AB2C1BD95BAE00485110 /* PersonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +68,6 @@
 				93E5AB271BD95B0B00485110 /* Patient.m */,
 				93E5AB291BD95B2100485110 /* Doctor.h */,
 				93E5AB2A1BD95B2100485110 /* Doctor.m */,
-				93E5AB2C1BD95BAE00485110 /* PersonInfo.h */,
 			);
 			path = PatientDoctor;
 			sourceTree = "<group>";
