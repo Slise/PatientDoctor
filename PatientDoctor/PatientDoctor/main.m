@@ -12,10 +12,10 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSMutableDictionary *patientRecord = [[patientRecord alloc] init];
-        Patient *patient = [[Patient alloc] initWithAge:10 name:@"Nick" healthCard:NO symptom:@"pimple"];
-        Doctor *doctor1 = [[Doctor alloc] initWithName:@"Tom" specializtion:@"Cardiologist"];
-        Doctor *doctor2 = [[Doctor alloc] initWithName:@"Mike" specializtion:@"pidiatrist"];
+        NSMutableDictionary *patientRecord = [[NSMutableDictionary alloc] init];
+        Patient *patient = [[Patient alloc] initWithAge:10 name:@"Nick" healthCard:YES symptom:@"pain"];
+        Doctor *doctor1 = [[Doctor alloc] initWithName:@"Tom" specializtion:@"Cardiologist" patientRecord:patientRecord];
+        Doctor *doctor2 = [[Doctor alloc] initWithName:@"Mike" specializtion:@"pidiatrist" patientRecord:patientRecord];
         [doctor1 visit:patient];
         [doctor1 requestMedication:patient];
         

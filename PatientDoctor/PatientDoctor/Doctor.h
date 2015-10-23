@@ -15,10 +15,10 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *specialiaztion;
 @property (nonatomic, strong) NSMutableArray *patientList;
-@property (nonatomic, strong) NSDictionary *patientRecord;
+@property (nonatomic, strong) NSMutableDictionary *patientRecord;
 
 - (void) requestMedication:(Patient*)patient;
-- (instancetype)initWithName:(NSString *)aName specializtion:(NSString *)aSpecialization;
+- (instancetype)initWithName:(NSString *)aName specializtion:(NSString *)aSpecialization patientRecord:(NSMutableDictionary *)aPatientRecord;
 - (void) visit:(Patient*)patient;
 
 @end

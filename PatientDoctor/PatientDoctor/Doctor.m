@@ -20,14 +20,13 @@
 @implementation Doctor
 
 
-- (instancetype)initWithName:(NSString *)aName specializtion:(NSString *)aSpecialization
-{
+- (instancetype)initWithName:(NSString *)aName specializtion:(NSString *)aSpecialization patientRecord:(NSMutableDictionary *)aPatientRecord{
     self = [super init];
     if (self) {
         _name = aName;
         _specialiaztion = aSpecialization;
         _patientList = [[NSMutableArray alloc] init];
-        _patientRecord = *patientRecord;
+        _patientRecord = aPatientRecord;
         _prescription = [@{ @"headache":@"tylenol", @"stomache":@"bismol", @"pain":@"advil"} mutableCopy];
     }
     return self;
@@ -51,6 +50,7 @@
     NSArray* listOfSymptoms = [self.prescription allKeys];
         if ([listOfSymptoms containsObject:patient.symptom])  {
             NSLog(@"Patient known symptom %@\n", self.prescription[patient.symptom]);
+            [self.patientRecord setObject:self.prescription[patient.symptom] forKey:patient.name];
         } else
         {
             NSLog(@"Patient has uncurable disease and will die!");
